@@ -1,0 +1,14 @@
+@import './styles/normalize.scss';
+@import './styles/theme/theme.scss';
+
+.wrapper {
+  padding-top: 100px;
+  min-height: 100vh;
+  @include get-class-from-key('background-color', 'background_color');
+}
+
+@media (max-width: 375px) {
+  .wrapper {
+      padding-top: 80px;
+  }
+}

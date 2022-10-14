@@ -1,0 +1,26 @@
+@import './dark.scss';
+@import './light.scss';
+
+$themes: (
+    dark: $darkTheme,
+    light: $lightTheme,
+);
+
+@mixin themeMixin {
+    @each $theme-name, $theme-map in $themes {
+        $theme-map: $theme-map !global;
+        [data-theme="#{$theme-name}"] & {
+            @content;
+        }
+    }
+}
+
+@function themed($key) {
+    @return map-get($theme-map, $key);
+}
+
+@mixin get-class-from-key($key, $colorName: $key) {
+    @include themeMixin {
+        #{$key}: themed($colorName);
+    }
+}

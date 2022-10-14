@@ -1,0 +1,28 @@
+@import './variable.scss';
+
+.MuiOutlinedInput-notchedOutline {
+    border-color: transparent !important;
+}
+
+[data-theme*="dark"] .MuiMenu-list{
+    background-color: $darkBule !important;
+}
+
+[data-theme*="light"] .MuiMenu-list{
+    background-color: $white !important;
+}
+
+[data-theme*="dark"] .MuiMenuItem-root{
+    color: $white !important;
+}
+
+[data-theme*="light"] .MuiMenuItem-root{
+    color: $lightTextColor !important;
+}
+
+
+@media (max-width: 375px) {
+    .MuiMenuItem-root {
+        font-size: 12px !important;
+    }
+}

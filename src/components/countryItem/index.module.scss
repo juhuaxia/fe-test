@@ -1,0 +1,72 @@
+@import '../../styles/variable.scss';
+@import '../../styles/theme/theme.scss';
+
+.wrapper {
+    margin: 32px 38px;
+    min-width: 168px;
+    width: calc((100% - 38px * 8) / 4);
+    @include get-class-from-key('background-color', 'country_card_background_color');
+    box-sizing: border-box;
+    border-radius: 6px;
+    cursor: pointer;
+
+    & .inner {
+        @include get-class-from-key('box-shadow', 'country_card_shadow');
+    }
+
+    & .flag {
+        position: relative;
+        padding-top: 63%;
+
+        & .flag-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+        }
+    }
+
+    & .info {
+        padding: 30px 24px 28px;
+        font-family: 'Nunito Sans', sans-serif;
+        @include get-class-from-key('color', 'font_color');
+
+        & .country-name {
+            height: 48px;
+            font-size: 16px;
+            font-weight: 600;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+        }
+        & .country-filed {
+            margin: 0 0 12px 0;
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+
+            & .label {
+                margin-right: 6px;
+                font-weight: 600;
+            }
+            & .text {
+                font-weight: 300;
+                
+            }
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .wrapper {
+        margin: 24px 0;
+        min-width: 100%;
+        width: 100%;
+    }
+}

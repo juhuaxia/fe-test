@@ -1,0 +1,104 @@
+@import '../../styles/variable.scss';
+@import '../../styles/theme/theme.scss';
+
+.wrapper {
+    width: 1440px;
+    padding: 46px 42px;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    & .toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        & .search-input {
+            margin-right: 24px;
+            flex: 1;
+            max-width: 480px;
+    
+            & .input {
+                font-size: 12px;
+                @include get-class-from-key('color', 'font_color');
+            }
+        
+            & .input-root {
+                padding-left: 34px;
+                @include get-class-from-key('background-color', 'input_background_color');
+            }
+        
+            & .input-contaier {
+                border-color: transparent !important;
+                @include get-class-from-key('box-shadow', 'box_shadow');
+            }
+        
+            & .input-focus {
+                border-color: transparent;
+            }
+    
+            & .search-icon-color {
+                @include get-class-from-key('fill', 'search_icon_color');
+            }
+        }
+
+        & .select-box {
+            width: 200px;
+
+            & .select-button {
+                border-color: transparent !important;
+                @include get-class-from-key('background-color', 'input_background_color');
+                @include get-class-from-key('color', 'font_color');
+                @include get-class-from-key('box-shadow', 'box_shadow');
+            }
+
+            & .arrow-icon {
+                @include get-class-from-key('fill', 'arrow_color');
+            }
+
+            & .select-input {
+                border-color: transparent !important;
+            }
+        }
+    }
+
+    & .list-wrapper {
+        padding-top: 40px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    & .select-item {
+        @include get-class-from-key('color', 'select_item_color');
+    }
+}
+
+@media (max-width: 375px) {
+    .wrapper {
+        width: 100%;
+        padding: 24px 14px;
+
+        & .toolbar {
+            flex-direction: column;
+            align-items: flex-start;
+
+            & .search-input {
+                margin-right: 0;
+                max-width: none;
+                width: 100%;
+                margin-bottom: 42px;
+            }
+
+            & .select-box {
+                width: 200px;
+    
+                & .select-button {
+                    font-size: 12px;
+                }
+            }
+        }
+
+        & .list-wrapper {
+            padding: 34px 42px;
+        }
+    }
+}

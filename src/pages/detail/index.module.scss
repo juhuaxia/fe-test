@@ -1,0 +1,173 @@
+@import '../../styles/variable.scss';
+@import '../../styles/theme/theme.scss';
+
+.wrapper {
+    width: 1440px;
+    padding: 74px 80px;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    & .toolbar {
+        margin-bottom: 80px;
+
+        & .back_button {
+            padding: 0 30px;
+            font-family: 'Nunito Sans', sans-serif;
+            font-weight: 600;
+            line-height: 44px;
+            @include get-class-from-key('background-color', 'back_button_background');
+            @include get-class-from-key('border', 'back_button_border');
+            @include get-class-from-key('box-shadow', 'back_button_shadow');
+            @include get-class-from-key('color', 'font_color');
+        }
+
+        & .array_back {
+            @include get-class-from-key('fill', 'arrow_back_color');
+        }
+    }
+
+    & .detail {
+        display: flex;
+
+        & .flag {
+            margin-right: 120px;
+            width: 560px;
+            height: 400px;
+    
+            & .flag-img {
+                width: 100%;
+                height: 100%;
+                background-size: cover;
+            }
+        }
+    
+        & .info {
+            flex: 1;
+            font-family: 'Nunito Sans', sans-serif;
+            @include get-class-from-key('color', 'font_color');
+
+            & .country-name {
+                margin-bottom: 46px;
+                font-size: 28px;
+                font-weight: 800;
+            }
+
+            & .grid {
+                font-size: 14px;
+                & .row {
+                    margin-bottom: 22px;
+                    display: flex;
+                    & .cell {
+                        flex: 1;
+                        display: flex;
+
+                        & .label {
+                            margin-right: 6px;
+                            font-weight: 600;
+                        }
+                        & .text {
+                            font-weight: 300;
+                        }
+                    }
+                }
+            }
+
+            & .borders {
+                display: flex;
+                font-family: 'Nunito Sans', sans-serif;
+
+                & .label {
+                    padding-top: 10px;
+                    flex: 0 0 138px;
+                    margin-right: 6px;
+                    font-weight: 600;
+                }
+
+                & .border-list {
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    & .border {
+                        margin: 0 6px 6px 0;
+                        padding: 12px 30px;
+                        font-size: 12px;
+                        font-weight: 300;
+                        @include get-class-from-key('background-color', 'border_country_background');
+                        @include get-class-from-key('color', 'font_color');
+                        @include get-class-from-key('box-shadow', 'country_card_shadow');
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .wrapper {
+        width: 100%;
+        padding: 40px 30px;
+
+        & .toolbar {
+            margin-bottom: 66px;
+        }
+
+        & .detail {
+            display: flex;
+            flex-direction: column;
+    
+            & .flag {
+                position: relative;
+                margin: 0 0 50px 0;
+                padding-top: 72%;
+                width: 100%;
+                height: auto;
+        
+                & .flag-img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-size: cover;
+                }
+            }
+        
+            & .info {
+                flex: 1;
+                font-family: 'Nunito Sans', sans-serif;
+                @include get-class-from-key('color', 'font_color');
+    
+                & .country-name {
+                    margin-bottom: 32px;
+                    font-size: 20px;
+                }
+    
+                & .grid {
+                    font-size: 14px;
+                    & .row {
+                        margin-bottom: 0;
+                        display: flex;
+                        flex-direction: column;
+
+                        & .cell {
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+    
+                & .borders {
+                    display: flex;
+                    flex-direction: column;
+                    font-family: 'Nunito Sans', sans-serif;
+    
+                    & .label {
+                        padding-top: 0;
+                        flex: 0 0 100%;
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+        }
+    }
+}

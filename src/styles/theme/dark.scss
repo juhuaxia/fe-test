@@ -1,0 +1,22 @@
+@import '../variable.scss';
+
+$darkTheme: (
+    element_color: $veryDarkBule,
+    font_color: $white,
+    background_color: $veryDarkBule,
+    input_background_color: $darkBule,
+    header_background: $darkBule,
+    header_shadow: 0 4px 6px rgba($color: $lightTextColor, $alpha: 0.6),
+    search_icon_color: $white,
+    arrow_color: $white,
+    box_shadow: none,
+    country_card_background_color: $darkBule,
+    country_card_shadow: 0 0 4px rgba($color: $lightTextColor, $alpha: 0.3),
+    select_item_color: $white,
+    country_border_shadow: 0 0 8px rgba($color: #000, $alpha: 1),
+    arrow_back_color: $white,
+    back_button_border: none,
+    back_button_shadow: 0 0 6px rgba($color: $lightTextColor, $alpha: 1),
+    back_button_background: $darkBule,
+    border_country_background: $darkBule,
+)
